@@ -1,0 +1,90 @@
+
+{% extends 'base.html' %}
+
+{% block title%}{{title}}{% endblock%}
+{% block css %}
+
+{% endblock %}
+{%block body %}
+
+<div class="container-fluid text-center mt-5 ">
+
+    <h1 class="text-danger">{{ title }}</h1>
+    <!-- 1m, 2m, 5m, 15m, 30m, 60m, 90m, 1h, 1d, 5d, 1wk, 1mo, 3mo -->
+    <!-- 1d","5d","1mo","3mo","6mo","1y","2y","5y","10y","ytd","max -->
+    <div class="mt-5">
+        <a href="1m"><button type="button" class="btn btn-primary" style="width: 7%;">1 Min</button></a>
+        <a href="2m"><button type="button" class="btn btn-primary" style="width: 7%;">2 Min</button></a>
+        <a href="5m"><button type="button" class="btn btn-primary" style="width: 7%;">5 Min</button></a>
+        <a href="15m"><button type="button" class="btn btn-primary" style="width: 7%;">15 Min</button></a>
+        <a href="30m"><button type="button" class="btn btn-primary" style="width: 7%;">30 Min</button></a>
+        <a href="60m"><button type="button" class="btn btn-primary" style="width: 7%;">60 Min</button></a>
+        <a href="90m"><button type="button" class="btn btn-primary" style="width: 7%;">90 Min</button></a>
+        <a href="1d"><button type="button" class="btn btn-primary" style="width: 7%;">1 Day</button></a>
+        <a href="5d"><button type="button" class="btn btn-primary" style="width: 7%;">5 Day</button></a>
+        <a href="1wk"><button type="button" class="btn btn-primary" style="width: 7%;">1 Week</button></a>
+        <a href="1mo"><button type="button" class="btn btn-primary" style="width: 7%;">1 Month</button></a>
+        <a href="3mo"><button type="button" class="btn btn-primary" style="width: 7%;">Overall</button></a>
+    </div>
+    <canvas id="chart" width="1300" height="500"></canvas>
+    <script>
+
+        // bar chart data
+        var barData = {
+            labels : [
+                {% for item in labels %}
+                "{{ item }}",
+                {% endfor %}
+            ],
+
+            datasets : [{
+            fillColor: "rgba(151,187,205,0.2)",
+            strokeColor: "rgba(151,187,205,1)",
+            pointColor: "rgba(151,187,205,1)",
+            pointStrokeColor: "#fff",
+            pointHighlightFill: "#fff",
+            pointHighlightStroke: "rgba(151,187,205,1)",
+            bezierCurve : false,
+            data : [
+            {% for item in values %}
+                {{ item }},
+            {% endfor %}]
+        }]
+    }
+
+        Chart.defaults.global.animationSteps = 50;
+        Chart.defaults.global.tooltipYPadding = 16;
+        Chart.defaults.global.tooltipCornerRadius = 0;
+        Chart.defaults.global.tooltipTitleFontStyle = "normal";
+        Chart.defaults.global.tooltipFillColor = "rgba(0,0,0,0.8)";
+        Chart.defaults.global.animationEasing = "easeOutBounce";
+        Chart.defaults.global.responsive = false;
+        Chart.defaults.global.scaleLineColor = "black";
+        Chart.defaults.global.scaleFontSize = 16;
+
+        // get bar chart canvas
+        var mychart = document.getElementById("chart").getContext("2d");
+
+        steps = 10
+        max = {{ max }}
+        min = {{ min }}
+        // min = {{ min }}
+        // draw bar chart
+        var LineChartDemo = new Chart(mychart).Line(barData, {
+        scaleOverride: true,
+        scaleSteps: steps,
+        scaleStepWidth: Math.ceil((max-min+10) / steps),
+        scaleStartValue: min-10,
+        scaleShowVerticalLines: true,
+        scaleShowGridLines : true,
+        barShowStroke : true,
+        scaleShowLabels: true,
+        bezierCurve: false,
+      });
+
+    </script>
+
+
+</div>
+
+{% endblock %}

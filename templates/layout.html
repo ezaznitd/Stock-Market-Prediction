@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block body%}
+<div class="container">
+	<h1 align="center">NASDAQ : Company Listings</h1>
+	<div class=" container mt-4 " >
+	<ul  class="list-group" style="padding-left: 100px;">
+		{% for row in rows %}
+			<li class="list-group-item"><a href="company/interval/{{ row[0] }}" name="name_of_company"><button type="button" class="btn btn-danger">{{ row[0] }}</button>
+</a></li>
+		{% endfor %}
+</ul>
+		</div>
+</div>
+{% endblock%}

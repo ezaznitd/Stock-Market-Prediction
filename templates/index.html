@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+
+<!--<!DOCTYPE html>
+
+<html>
+    <head>
+	    <style>
+	        * {
+	            box-sizing: border-box;
+	        }
+
+	        .column {
+	            float: left;
+	            width: 20%;
+	            padding: 15px;
+	            align-content: center;
+	        }
+	        .row::after {
+	            content: "";
+	            clear: both;
+	            display: table;
+	        }
+	    </style>
+    </head>
+<body>-->
+{% block title%}Home{% endblock%}
+{% block css %}
+	        * {
+	            box-sizing: border-box;
+	        }
+
+	        .column {
+	            float: left;
+	            width: 20%;
+	            padding: 15px;
+	            align-content: center;
+	        }
+	        .row::after {
+	            content: "";
+	            clear: both;
+	            display: table;
+	        }
+
+{% endblock %}
+{%block body %}
+
+<marquee behavior="slide" direction="left" scrollamount="150"> <h2  class="text-primary" align="center">Stock Value prediction of world's largest companies</h2></marquee>
+ <marquee behavior="slide" direction="down" scrollamount="100" scrolldelay="500"><h4 class="text-danger" align="center">Click the button to get it's current stock-market graph</h4></marquee>
+<div class="container mt-5">
+    <h1  class="text-primary" align="center">NASDAQ : Company Listings</h1>
+    </div>
+ <div align="center">
+	<a href="alphabet/A"><button type="button" class="btn btn-success" style="width: 3%;">A</button></a>
+	 <a href="alphabet/B"><button type="button" class="btn btn-success" style="width: 3%;">B</button></a>
+		  <a href="alphabet/C"><button type="button" class="btn btn-success" style="width: 3%;">C</button></a>
+		  <a href="alphabet/D"><button type="button" class="btn btn-success" style="width: 3%;">D</button></a>
+		<a href="alphabet/E"><button type="button" class="btn btn-success" style="width: 3%;">E</button></a>
+		<a href="alphabet/F"><button type="button" class="btn btn-success" style="width: 3%;">F</button></a>
+		<a href="alphabet/G"><button type="button" class="btn btn-success" style="width: 3%;">G</button></a>
+		<a href="alphabet/H"><button type="button" class="btn btn-success" style="width: 3%;">H</button></a>
+		<a href="alphabet/I"><button type="button" class="btn btn-success" style="width: 3%;">I</button></a>
+		<a href="alphabet/J"><button type="button" class="btn btn-success" style="width: 3%;">J</button></a>
+		  <a href="alphabet/K"><button type="button" class="btn btn-success" style="width: 3%;">K</button></a>
+		<a href="alphabet/L"><button type="button" class="btn btn-success" style="width: 3%;">L</button></a>
+		 <a href="alphabet/M"><button type="button" class="btn btn-success" style="width: 3%;">M</button></a>
+		<a href="alphabet/N"><button type="button" class="btn btn-success" style="width: 3%;">N</button></a>
+		 <a href="alphabet/O"><button type="button" class="btn btn-success" style="width: 3%;">O</button></a>
+		<a href="alphabet/P"><button type="button" class="btn btn-success" style="width: 3%;">P</button></a>
+		<a href="alphabet/Q"><button type="button" class="btn btn-success" style="width: 3%;">Q</button></a>
+		<a href="alphabet/R"><button type="button" class="btn btn-success" style="width: 3%;">R</button></a>
+		<a href="alphabet/S"><button type="button" class="btn btn-success" style="width: 3%;">S</button></a>
+		<a href="alphabet/T"><button type="button" class="btn btn-success" style="width: 3%;">T</button></a>
+		 <a href="alphabet/U"><button type="button" class="btn btn-success" style="width: 3%;">U</button></a>
+		 <a href="alphabet/V"><button type="button" class="btn btn-success" style="width: 3%;">V</button></a>
+		  <a href="alphabet/W"><button type="button" class="btn btn-success" style="width: 3%;">W</button></a>
+		 <a href="alphabet/X"><button type="button" class="btn btn-success" style="width: 3%;">X</button></a>
+
+		 <a href="alphabet/Y"><button type="button" class="btn btn-success" style="width: 3%;">Y</button></a>
+		 <a href="alphabet/Z"><button type="button" class="btn btn-success" style="width: 3%;">Z</button></a>
+		 <a href="Other"><button type="button" class="btn btn-success" >Other</button></a>
+ </div>
+{% endblock %}
