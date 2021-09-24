@@ -1,4 +1,13 @@
-# Stock Market Live Update and Future Stock Value
+<h1 align="center">Stock Market Live Update and Future Stock Value</h1>
+
+<div align="center">
+  
+[![Python Badge](https://img.shields.io/badge/-Python-blue?style=for-the-badge&labelColor=blue&logo=python&logoColor=purple)](#)
+[![Flask Badge](https://img.shields.io/badge/-Flask-yellow?style=for-the-badge&labelColor=yellow&logo=flask&logoColor=black)](#)
+[![MySql Badge](https://img.shields.io/badge/-Mysql-3C873A?style=for-the-badge&labelColor=3C873A&logo=mysql&logoColor=black)](#)
+
+</div>
+
 ‘A rising stock market is usually aligned with a growing economy and leads to greater investor confidence’. Investors follow some investment strategy before investing his/her stock into the market. In that scenario previous stock history for any company is the key factor of investment. Futures and derivatives help increase the efficiency of the underlying market. In Indian market investors preffer ‘NSE’ companies because it provides more liquidity for its stocks.
 
 ## Solution:
